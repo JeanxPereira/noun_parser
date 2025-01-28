@@ -1,0 +1,29 @@
+name: Build Noun Parser
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install g++
+      run: sudo apt-get install g++
+
+    - name: Compile Noun Parser
+      run: g++ main.cpp res/noun_parser.o -o noun_parser.exe
+
+    - name: Upload .exe as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: noun_parser
+        path: noun_parser.exe
