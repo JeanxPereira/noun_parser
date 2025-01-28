@@ -10,14 +10,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
     - name: Install g++
-      run: sudo apt-get install g++
+      run: choco install mingw
 
     - name: Compile Noun Parser
       run: g++ main.cpp res/noun_parser.o -o noun_parser.exe
