@@ -5,6 +5,7 @@
 #include <sstream>
 #include <iomanip>
 #include <algorithm>
+#include <cstdint>
 
 struct Vector3 {
     float x, y, z;
