@@ -20,7 +20,7 @@ jobs:
       run: choco install mingw
 
     - name: Compile Noun Parser
-      run: g++ main.cpp res/noun_parser.o -o noun_parser.exe
+      run: g++ -m64 main.cpp res/noun_parser.o -o noun_parser.exe
 
     - name: Upload .exe as artifact
       uses: actions/upload-artifact@v4
